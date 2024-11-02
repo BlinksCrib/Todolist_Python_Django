@@ -1,0 +1,11 @@
+{% include 'partials/header.html' %}
+<div class="mt-12">
+  <a href="/todos" class="border border-deepYellow px-6 py-2 rounded-md text-deepYellow font-medium ml-14 mb-4" ><< Go Back</a>
+      <div class="flex justify-center items-center flex-col">
+        <h1 class="font-medium text-deepYellow text-2xl">{{todo.title}}</h1>
+        <p>{{todo.text}}</p>
+        <p>Created on {{todo.created_at}}</p>
+      </div>
+</div>
+<br>
+{% include 'partials/footer.html' %}

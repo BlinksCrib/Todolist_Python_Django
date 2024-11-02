@@ -1,0 +1,12 @@
+{% include 'partials/header.html' %}
+<div class="flex justify-center items-center mt-10">
+  <ol>
+    {% for todo in todos %}
+    <li class="mb-4">
+      <span>{{todo.id}}). </span>
+      <a href="/todos/details/{{todo.id}}" class="underline decoration-solid text-deepYellow">{{todo.title}}</a>:
+      {{todo.text}}</li>
+    {% endfor %}
+  </ol>
+</div>
+{% include 'partials/footer.html' %}

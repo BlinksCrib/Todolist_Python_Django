@@ -1,0 +1,20 @@
+{% include 'partials/header.html' %}
+<form action="{% url 'add' %}" method="post" class="flex justify-center items-center w-full h-[70vh]">
+  {% csrf_token %}
+  <main class="flex justify-center items-center flex-col w-[40%] h-full bg-white border px-6 py-2 rounded-md mt-8">
+    <div class="block mb-6 w-full">
+      <label for="title" class="block font-semibold mb-2 text-deepYellow">Title</label>
+      <input type="text" name="title" id="title" class="border border-deepYellow w-full px-4 py-1 rounded-md" />
+    </div>
+    <div class="block w-full">
+      <label for="text" class="block font-semibold mb-2 text-deepYellow">Text</label>
+      <textarea name="text" id="text" class="border border-deepYellow w-full px-4 py-4 rounded-md"></textarea>
+    </div>
+    <div class="flex justify-between items-center w-full mt-6">
+      <input type="submit" value="Submit" class="bg-deepYellow px-6 py-2 rounded-md text-white font-medium cursor-pointer" />
+      <a href="/todos" class="bg-white border border-deepYellow px-6 py-2 rounded-md text-deepYellow font-medium">Go Back</a>
+    </div>
+  </main>
+</form>
+<br>
+{% include 'partials/footer.html' %}

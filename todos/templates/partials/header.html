@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>TODOLIST APP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: "#000000",
+            offblack: "#181818",
+            white: "#ffffff",
+            offwhite: "#f2f2f2",
+            deepblue: "#25076B",
+            closedark: "#0A0D14",
+            grey: "#525866",
+            borderGrey: "#E2E4E9",
+            errorRed: "#DF1C41",
+            deepYellow: "#997F4E",
+          },
+          screens: {
+            fd: [{ max: "320px" }],
+            lsm: [{ max: "576px" }],
+            lmd: [{ max: "768px" }],
+            llg: [{ max: "992px" }],
+            sm: "576px",
+            md: "768px",
+            lg: "992px",
+            xl: "1200px",
+            "2xl": "1440px",
+          },
+          fontFamily: {
+            Ubuntu: ["Ubuntu", "sans-serif"],
+            Arimo: ["Arimo", "sans-serif"],
+            Helvetica: ["'Helvetica Neue'", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body>
+  <header class="flex justify-center items-center flex-col">
+    <h1 class="font-bold text-center text-2xl py-2 text-deepYellow">TODOLIST APP USING PYTHON</h1>
+    {% if request.path == '/todos/add' %}
+    <a href="/todos" class="bg-white border border-deepYellow px-6 py-2 rounded-md text-deepYellow font-medium">
+      Go to Todo List
+    </a>
+    {% else %}
+    <a href="/todos/add" class="bg-white border border-deepYellow px-6 py-2 rounded-md text-deepYellow font-medium">
+      Add What Todo
+    </a>
+    {% endif %}
+    <hr>
+  </header>
